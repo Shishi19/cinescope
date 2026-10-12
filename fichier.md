@@ -10,3 +10,7 @@
 
 # Corrections 
 
+- Les gommettes sont indicateur de si des places pour la séance sont disponibles ou non, rendu plus clair en ajoutant simplement cette directive à l'écrit.
+- L'étoile correspond aux favoris de la même manière cette directive a été ajoutée explicitement
+- 
+
