@@ -47,19 +47,22 @@ export default function App() {
             <div className="film-card" key={film.id} onClick={() => setSelected(film.title)}>
               <img src={film.poster} />
               <div className="film-content">
-                <p>{film.available ? "Places disponibles" : "Places indisponibles"}</p>
-                <div className={film.available ? "availability available" : "availability unavailable"} />
-                <h4>{film.title}</h4>
+                <span className={film.available ? "availability available" : "availability unavailable"}>
+                  {film.available ? "Places disponibles" : "Places indisponibles"}
+                </span>
+                <div className="film-header">
+                  <h4>{film.title}</h4>
+                  <button
+                    className="favorite"
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      toggleFavorite(film.id);
+                    }}
+                  >
+                    Favoris {favorites.includes(film.id) ? "★" : "☆"}
+                  </button>
+                </div>
                 <p>{film.genre} · {film.time}</p>
-                <button
-                  className="favorite"
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    toggleFavorite(film.id);
-                  }}
-                >
-                  Favoris {favorites.includes(film.id) ? "★" : "☆"}
-                </button>
               </div>
             </div>
           ))}
